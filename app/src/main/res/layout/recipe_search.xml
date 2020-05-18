@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="130dp"
+    android:layout_marginBottom="150dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Text_RecipeFinder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:gravity="center"
+
+        android:text="@string/Text_WelcomeRecipeFinder" />
+
+
+    <EditText
+        android:id="@+id/EditText_SearchField1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="@string/EditText_SearchField1"/>
+
+    <EditText
+        android:id="@+id/EditText_SearchField2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="@string/EditText_SearchField2"/>
+
+    <EditText
+        android:id="@+id/EditText_SearchField3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="@string/EditText_SearchField3"/>
+
+    <EditText
+        android:id="@+id/EditText_SearchField4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="@string/EditText_SearchField4"/>
+
+
+    <EditText
+        android:id="@+id/EditText_SearchField5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="@string/EditText_SearchField5"/>
+
+    <Button
+        android:id="@+id/Button_LetsCook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:text="@string/Button_LetsCook"/>
+        <!--android:onClick="Search" -->
+
+
+
+</LinearLayout>
