@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Inhalt der Testmemo: " + testMemo.toString());
 
         dataSource = new RecipeMemoDataSource(this);
-
+iuajbioanioajkbno
  */
     }
 }
