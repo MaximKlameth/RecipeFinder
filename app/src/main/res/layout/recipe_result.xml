@@ -13,7 +13,7 @@
         android:id="@+id/Text_RecipeFinder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:gravity="center"
         android:text="@string/Text_WelcomeRecipeFinder" />
 
@@ -25,6 +25,24 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/Text_Rezept1"/>
+
+    <ImageView
+        android:id="@+id/Image_Rezept"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/Text_RecipeIngredientsList"
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:text="@string/Text_RecipeIngredients" />
+
 </LinearLayout>
