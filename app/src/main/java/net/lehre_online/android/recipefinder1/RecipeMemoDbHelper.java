@@ -5,8 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.sql.Blob;
-
 public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
         private static final String LOG_TAG = RecipeMemoDbHelper.class.getSimpleName();
@@ -15,7 +13,9 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         public static final String DB_NAME = "rezept_list.db";
         public static final int DB_VERSION = 1;
 
-        public static final String TABLE_REZEPT_LIST = "rezept_list";
+
+        //TABELLE REZEPT
+        public static final String TABLE_REZEPT = "rezept";
 
         public static final String COLUMN_ID = "rez_id";
         public static final String COLUMN_NAME = "rez_name";
@@ -26,7 +26,7 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
 
         public static final String SQL_CREATE_REZEPT =
-                "CREATE TABLE " + TABLE_REZEPT_LIST +
+                "CREATE TABLE " + TABLE_REZEPT +
                         "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_NAME + " TEXT NOT NULL, " +
                         COLUMN_BESCHREIBUNG + " TEXT NOT NULL, " +
