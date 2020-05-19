@@ -24,8 +24,11 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         public static final String COLUMN_BILD = "rez_bild";
         public static final String COLUMN_KALORIEN = "rez_kalorien";
 
+         //TABELLE ZUTATEN
 
-        public static final String SQL_CREATE_REZEPT =
+
+
+    public static final String SQL_CREATE_REZEPT =
                 "CREATE TABLE " + TABLE_REZEPT +
                         "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_NAME + " TEXT NOT NULL, " +
