@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final boolean DBG        = true;
     static final String TAG         = "MainActivity";
+    RecipeMemoDbHelper myDb;
 
     private Button btnLetsCook;
 
@@ -24,11 +25,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
        final String MNAME = "onCreate()";
         if (DBG) Log.d(TAG, MNAME + "entering...");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       myDb = new RecipeMemoDbHelper(this);
+        System.out.println("Db gestartet");
+
+
 
         btnLetsCook = findViewById(R.id.Button_LetsCook);
         btnLetsCook.setOnClickListener(new View.OnClickListener() {
