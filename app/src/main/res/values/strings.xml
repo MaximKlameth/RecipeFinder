@@ -1,15 +1,21 @@
 <resources>
     <string name="app_name">RecipeFinder</string>
-    <string name="Text_WelcomeRecipeFinder">RecipeFinder</string>
+
     <string name="Image_LogoRecipeFinder">LogoRecipeFinder</string>
+
     <string name="Button_LetsCook">Lets Cook</string>
     <string name="Button_Search">Search</string>
+    <string name="Button_AddIngredient">+</string>
+
     <string name="EditText_SearchField1">Type Ingredient</string>
     <string name="EditText_SearchField2">Type Ingredient</string>
     <string name="EditText_SearchField3">Type Ingredient</string>
     <string name="EditText_SearchField4">Type Ingredient</string>
     <string name="EditText_SearchField5">Type Ingredient</string>
+
+    <string name="Text_WelcomeRecipeFinder">RecipeFinder</string>
     <string name="Text_Rezept1">Rezept1</string>
     <string name="Text_RecipeIngredients">Recipe</string>
+
 </resources>
 

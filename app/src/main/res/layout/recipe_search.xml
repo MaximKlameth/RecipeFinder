@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/layout_recipe_search"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -19,6 +20,7 @@
         android:text="@string/Text_WelcomeRecipeFinder" />
 
 
+
     <EditText
         android:id="@+id/EditText_SearchField1"
         android:layout_width="fill_parent"
@@ -33,37 +35,80 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField2"/>
 
-    <EditText
-        android:id="@+id/EditText_SearchField3"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/layout2_recipe_search"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:text="@string/EditText_SearchField3"/>
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/EditText_SearchField4"
-        android:layout_width="fill_parent"
+        <Button
+            android:id="@+id/Button_AddIngredient"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/Button_AddIngredient"
+            android:textSize="10dp"/>
+
+        <EditText
+            android:id="@+id/EditText_SearchField3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="60dp"
+            android:text="@string/EditText_SearchField3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3_recipe_search"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:text="@string/EditText_SearchField4"/>
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/Button_AddIngredient2"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/Button_AddIngredient"
+            android:textSize="10dp"/>
+
+        <EditText
+            android:id="@+id/EditText_SearchField4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="60dp"
+            android:text="@string/EditText_SearchField4"
+            />
+
+    </LinearLayout>
 
 
-    <EditText
-        android:id="@+id/EditText_SearchField5"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:text="@string/EditText_SearchField5"/>
+        <EditText
+            android:id="@+id/EditText_SearchField5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:text="@string/EditText_SearchField5"
+            android:visibility="gone"/>
+
 
     <Button
         android:id="@+id/Button_Search"
