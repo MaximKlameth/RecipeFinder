@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_marginTop="130dp"
-    android:layout_marginBottom="150dp"
+    android:layout_marginBottom="130dp"
     android:layout_marginLeft="50dp"
     android:layout_marginRight="50dp"
     android:orientation="vertical">
@@ -23,36 +23,36 @@
         android:id="@+id/EditText_SearchField1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField1"/>
 
     <EditText
         android:id="@+id/EditText_SearchField2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField2"/>
 
     <EditText
         android:id="@+id/EditText_SearchField3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField3"/>
 
     <EditText
         android:id="@+id/EditText_SearchField4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField4"/>
 
 
@@ -61,20 +61,20 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:text="@string/EditText_SearchField5"/>
 
     <Button
-        android:id="@+id/Button_LetsCook"
+        android:id="@+id/Button_Search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:text="@string/Button_LetsCook"/>
-        <!--android:onClick="Search" -->
-
+        android:text="@string/Button_Search"
+        android:gravity="center"
+        />
 
 
 </LinearLayout>

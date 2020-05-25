@@ -3,6 +3,7 @@
     <string name="Text_WelcomeRecipeFinder">RecipeFinder</string>
     <string name="Image_LogoRecipeFinder">LogoRecipeFinder</string>
     <string name="Button_LetsCook">Lets Cook</string>
+    <string name="Button_Search">Search</string>
     <string name="EditText_SearchField1">Type Ingredient</string>
     <string name="EditText_SearchField2">Type Ingredient</string>
     <string name="EditText_SearchField3">Type Ingredient</string>
