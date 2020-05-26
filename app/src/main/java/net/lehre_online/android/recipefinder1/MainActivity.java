@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       myDb = new RecipeMemoDbHelper(this);
+        myDb = new RecipeMemoDbHelper(this);
         System.out.println("Db gestartet");
 
 
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(DBG)Log.d(TAG,MNAME +"entering...");
     }
+
      public void onClickLetsCook() {
 
            final String MNAME = "onClickLetsCook()";

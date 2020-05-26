@@ -40,7 +40,7 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
 
 
-//CREATE für Tabelle Rezept
+    //CREATE für Tabelle Rezept
     public static final String SQL_CREATE_REZEPT =
                 "CREATE TABLE " + TABLE_REZEPT +
                         "(" + COLUMN_REZ_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -48,21 +48,23 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
                         COLUMN_REZ_BESCHREIBUNG + " TEXT NOT NULL, " +
                         COLUMN_REZ_DAUER + " TEXT NOT NULL, " +
                         COLUMN_REZ_BILD + " BLOB NOT NULL, " +
-                        COLUMN_REZ_KALORIEN + " INTEGER NOT NULL + );";
+                        COLUMN_REZ_KALORIEN + " INTEGER NOT NULL);";
 
     //CREATE für Tabelle Zutaten
     public static final String SQL_CREATE_ZUTATEN =
             "CREATE TABLE " + TABLE_ZUTATEN +
                     "(" + COLUMN_ZUT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_ZUT_NAME + " TEXT NOT NULL, " +
-                    COLUMN_ZUT_KALORIEN + " INTEGER NOT NULL + );";
+                    COLUMN_ZUT_KALORIEN + " INTEGER NOT NULL);";
 
     //CREATE für Tabelle Rezept_Zutaten
     public static final String SQL_CREATE_REZEPT_ZUTATEN =
             "CREATE TABLE " + TABLE_REZEPT_ZUTATEN +
                     "(" + COLUMN_REZ_ZUT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COLUMN_ID_ZUT + " INTEGER   FOREIGN KEY(id_zut) REFERENCES zutaten(zut_id)" +
-                    COLUMN_ID_REZ + " INTEGER   FOREIGN KEY(id_rez) REFERENCES rezept(rez_id) + );";
+                    COLUMN_ID_ZUT + " INTEGER NOT NULL, " +
+                    COLUMN_ID_REZ + " INTEGER NOT NULL, " +
+                    "FOREIGN KEY(id_zut) REFERENCES zutaten(zut_id), " +
+                    "FOREIGN KEY(id_rez) REFERENCES rezept(rez_id));";
 
 
 
@@ -70,12 +72,14 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
     public RecipeMemoDbHelper(Context context) {
             super(context, DB_NAME, null, DB_VERSION);
             Log.d(LOG_TAG, "DbHelper hat die Datenbank: " + getDatabaseName() + " erzeugt.");
+            SQLiteDatabase db = this.getWritableDatabase();
         }
 
         // Die onCreate-Methode wird nur aufgerufen, falls die Datenbank noch nicht existiert
         @Override
         public void onCreate(SQLiteDatabase db) {
             try {
+
                 Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATE_REZEPT + " angelegt.");
                 db.execSQL(SQL_CREATE_REZEPT);
                 Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATE_ZUTATEN + " angelegt.");
@@ -89,9 +93,11 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             }
         }
 
+
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        }
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_REZEPT + ";");
+    }
 
 
     }
