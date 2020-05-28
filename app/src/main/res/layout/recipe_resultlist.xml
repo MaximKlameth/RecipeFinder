@@ -33,19 +33,14 @@
 
     </LinearLayout>
 
-        android:text="@string/Text_WelcomeRecipeFinder" />
-
 
     <ListView
         android:id="@+id/listview_recipelist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#0f0"
+        android:divider="#4CAF50"
         android:dividerHeight="1dp"
-        android:listSelector="#0f0"
-
+        android:listSelector="#4CAF50"
         />
-
-
 
 </LinearLayout>
