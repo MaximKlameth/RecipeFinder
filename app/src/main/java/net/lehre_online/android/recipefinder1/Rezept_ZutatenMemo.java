@@ -7,13 +7,16 @@ public class Rezept_ZutatenMemo {
     private long rez_zut_id;
     private long id_zut;
     private long id_rez;
+    private String zut_anzahl;
 
 
-    public Rezept_ZutatenMemo(long rez_zut_id, long id_zut, long id_rez) {
+    public Rezept_ZutatenMemo(long rez_zut_id, long id_zut, long id_rez, String zut_anzahl) {
         this.rez_zut_id = rez_zut_id;
         this.id_zut = id_zut;
         this.id_rez= id_rez;
+        this.zut_anzahl = zut_anzahl;
     }
+
 
     public long getRez_zut_id() {
         return rez_zut_id;
@@ -38,4 +41,11 @@ public class Rezept_ZutatenMemo {
     public void setId_rez(long id_rez) {
         this.id_rez = id_rez;
     }
+
+    public String getZut_anzahl() { return zut_anzahl; }
+
+    public void setZut_anzahl(String zut_anzahl) {
+        this.zut_anzahl = zut_anzahl;
+    }
+
 }
