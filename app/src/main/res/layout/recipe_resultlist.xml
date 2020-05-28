@@ -9,19 +9,40 @@
     android:layout_marginRight="50dp"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Text_RecipeFinder"
+    <LinearLayout
+        android:id="@+id/layout1_recipe_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ImageView_recipefinderlogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/recipefinderlogo"/>
+
+        <TextView
+            android:id="@+id/Text_RecipeFinder"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="60dp"
+            android:text="@string/Text_WelcomeRecipeFinder"
+            android:layout_gravity="center"
+            android:textSize="40dp" />
+
+    </LinearLayout>
 
         android:text="@string/Text_WelcomeRecipeFinder" />
 
 
     <ListView
+        android:id="@+id/listview_recipelist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="#0f0"
+        android:dividerHeight="1dp"
+        android:listSelector="#0f0"
 
         />
 

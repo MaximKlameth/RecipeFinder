@@ -24,12 +24,11 @@
 
     <ImageView
         android:id="@+id/Image_RecipeFinder"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="130dp"
+        android:layout_height="129dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_action_name"
-        />
+        android:layout_marginTop="50dp"
+        android:src="@drawable/recipefinderlogo" />
 
     <Button
         android:id="@+id/Button_LetsCook"

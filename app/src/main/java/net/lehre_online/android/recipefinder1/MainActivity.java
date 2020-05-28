@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             if( DBG ) Log.d( TAG, MNAME + "...exiting" );
     }
  /*
+
         RecipeMemo testMemo = new RecipeMemo("Pizza", "Pizza dies das", 102);
         Log.d(LOG_TAG, "Inhalt der Testmemo: " + testMemo.toString());
 
