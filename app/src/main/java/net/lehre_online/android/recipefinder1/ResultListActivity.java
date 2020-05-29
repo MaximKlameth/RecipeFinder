@@ -9,6 +9,8 @@ import android.widget.ListView;
 
 public class ResultListActivity extends AppCompatActivity {
 
+    ListView listview;
+
     static final boolean DBG = MainActivity.DBG;
     static final String TAG = "ResultListActivity";
 
@@ -19,7 +21,16 @@ public class ResultListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_resultlist);
 
+       /* listview.setOnItemClickListener(new OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?>adapter,View v, int position){
+                ItemClicked item = adapter.getItemAtPosition(position);
 
+                Intent intent = new Intent(Activity.this,destinationActivity.class);
+                //based on item add info to intent
+                startActivity(intent);
+            }
+        });*/
 
     }
 }
