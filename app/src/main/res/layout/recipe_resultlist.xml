@@ -33,14 +33,14 @@
             android:textColor="#000000"/>
     </LinearLayout>
 
+        <ListView
+            android:id="@+id/listview_recipelist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#4CAF50"
+            android:dividerHeight="1dp"
+            android:listSelector="#4CAF50"
+         />
 
-    <ListView
-        android:id="@+id/listview_recipelist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#4CAF50"
-        android:dividerHeight="1dp"
-        android:listSelector="#4CAF50"
-        android:textColor="#000000" />
 
 </LinearLayout>
