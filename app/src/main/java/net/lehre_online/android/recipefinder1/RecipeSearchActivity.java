@@ -1,8 +1,10 @@
 package net.lehre_online.android.recipefinder1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.Layout;
@@ -17,9 +19,12 @@ public class RecipeSearchActivity extends AppCompatActivity {
     static final boolean DBG        = MainActivity.DBG;
     static final String TAG         = "RecipeSearchActivity";
 
+    RecipeMemoDbHelper myDb;
+
     private Button btnSearch;
     private Button btnAddIngredient;
     private Button btnAddIngredient2;
+    private Button btnShowAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +33,14 @@ public class RecipeSearchActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_search);
+        myDb = new RecipeMemoDbHelper(this);
 
         btnSearch = findViewById(R.id.Button_Search);
+        btnShowAll = (Button) findViewById(R.id.Button_Show_All);
+
+        onClickShowAll();
+
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -98,5 +109,38 @@ public class RecipeSearchActivity extends AppCompatActivity {
         editText_SearchField5.setVisibility(View.VISIBLE);
 
         if( DBG ) Log.d( TAG, MNAME + "...exiting" );
+    }
+
+    public void onClickShowAll(){
+        btnShowAll.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                       Cursor res = myDb.getAllRecipes();
+                       if(res.getCount() == 0){
+                           //Nachricht zeigen für den Fall, dass keine
+                           showMessage("Error", "Keine Rezepte gefunden");
+                           return;
+                       }
+
+                       StringBuffer buffer = new StringBuffer();
+                       while (res.moveToNext()){
+                           buffer.append("Rezept Nummer " + res.getString(0)+"\n");
+                           buffer.append(res.getString(1)+"\n\n");
+                       }
+                       //Alle Rezepte anzeigen
+                        showMessage("Data", buffer.toString());
+                    }
+
+                }
+        );
+    }
+
+    public void showMessage(String title, String Message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
     }
 }

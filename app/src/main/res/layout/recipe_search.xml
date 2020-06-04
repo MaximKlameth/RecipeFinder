@@ -143,5 +143,17 @@
         android:textColor="#000000"
         android:background="#4CAF50"/>
 
+    <Button
+        android:id="@+id/Button_Show_All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:text="Show All"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:background="#4CAF50"/>
+
 
 </LinearLayout>
