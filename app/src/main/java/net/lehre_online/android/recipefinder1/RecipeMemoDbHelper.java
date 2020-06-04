@@ -223,6 +223,37 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             "(zut_id, zut_name) VALUES (25, 'Zitronengras')";
 
 
+    //Für Bautzerl
+    public static final String SQL_INSERT_EIER= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (26, 'Ei(er)')";
+    public static final String SQL_INSERT_MEHL= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (27, 'Mehl')";
+    public static final String SQL_INSERT_BUTTER= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (28, 'Butter')";
+
+    //Für Spitzkohl-Champignon-Hackpfanne mit Reis
+    public static final String SQL_INSERT_REIS= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (29, 'Reis')";
+    public static final String SQL_INSERT_SPITZKOHL= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (30, 'Spitzkohl')";
+    public static final String SQL_INSERT_CHAMPIGNONS= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (31, 'Champignons')";
+    public static final String SQL_INSERT_GEMUESEBRUEHE= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (32, 'Gemüsebrühe')";
+    public static final String SQL_INSERT_SENF= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (33, 'Senf')";
+    public static final String SQL_INSERT_MAJORAN= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (34, 'Majoran')";
+    public static final String SQL_INSERT_PAPRIKAPULVER= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (35, 'Paprikapulver')";
+    public static final String SQL_INSERT_KUEMMEL= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (36, 'Kümmel')";
+    public static final String SQL_INSERT_FRISCHKAESE= "INSERT INTO " + TABLE_ZUTATEN +
+            "(zut_id, zut_name) VALUES (37, 'Frischkäse')";
+
+
+
+
 
     //Rezept_Zutaten
     //Spaghettie
@@ -266,38 +297,79 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
     public static final String SQL_INSERT_HAENCHEN_HUEHNERFOND = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
             "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (16, 12, 2, '50 ml')";
     public static final String SQL_INSERT_HAENCHEN_ZUCKER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (15, 13, 2, '1 TL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (17, 13, 2, '1 TL')";
     public static final String SQL_INSERT_HAENCHEN_CREME = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (16, 14, 2, '2 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (18, 14, 2, '2 EL')";
 
 
     //Curry
     public static final String SQL_INSERT_CURRY_HAENCHEN = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (17, 7, 3, '250g')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (19, 7, 3, '250g')";
     public static final String SQL_INSERT_CURRY_FRUEHLINGSZWIEBEL = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (18, 15, 3, '3-4 Stück')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (20, 15, 3, '3-4 Stück')";
     public static final String SQL_INSERT_CURRY_CURRYPASTE = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (19, 16, 3, '3 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (21, 16, 3, '3 EL')";
     public static final String SQL_INSERT_CURRY_KOKUSMILCH = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (20, 17, 3, '200ml')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (22, 17, 3, '200ml')";
     public static final String SQL_INSERT_CURRY_ERDNUSSBUTTER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (21, 18, 3, '1 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (23, 18, 3, '1 EL')";
     public static final String SQL_INSERT_CURRY_ZUCKER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (22, 13, 3, '1/2 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (24, 13, 3, '1/2 EL')";
     public static final String SQL_INSERT_CURRY_ESSIG = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (23, 19, 3, '1/2 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (25, 19, 3, '1/2 EL')";
     public static final String SQL_INSERT_CURRY_FISCHSAUCE = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (24, 20, 3, '2 EL')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (26, 20, 3, '2 EL')";
     public static final String SQL_INSERT_CURRY_ERDNÜSSE = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (25, 21, 3, '50g')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (27, 21, 3, '50g')";
     public static final String SQL_INSERT_CURRY_KARTOFFEL = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (26, 22, 3, '2')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (28, 22, 3, '2')";
     public static final String SQL_INSERT_CURRY_INGWER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (27, 23, 3, '1 1/2cm')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (29, 23, 3, '1 1/2cm')";
     public static final String SQL_INSERT_CURRY_KORIANDER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (28, 24, 3, '1/4 Bund')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (30, 24, 3, '1/4 Bund')";
     public static final String SQL_INSERT_CURRY_ZITRONENGRAS = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
-            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (29, 25, 3, '1/2 Stängel')";
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (31, 25, 3, '1/2 Stängel')";
+
+
+    //Bautzerl
+    public static final String SQL_INSERT_BAUTZERL_KARTOFFELN = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (32, 22, 4, '8')";
+    public static final String SQL_INSERT_BAUTZERL_EIER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (33, 26, 4, '1')";
+    public static final String SQL_INSERT_BAUTZERL_MEHL = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (34, 27, 4, '5EL')";
+    public static final String SQL_INSERT_BAUTZERL_BUTTER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (35, 28, 4, '30g')";
+
+
+    //Für Spitzkohl-Champignon-Hackpfanne mit Reis
+    public static final String SQL_INSERT_PFANNE_REIS = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (36, 29, 5, '100g')";
+    public static final String SQL_INSERT_PFANNE_HACKFLEISCH = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (37, 1, 5, '400g')";
+    public static final String SQL_INSERT_PFANNE_SPITZKOHL = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (38, 30, 5, '500g')";
+    public static final String SQL_INSERT_PFANNE_CHAMPIGNONS = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (39, 31, 5, '250g')";
+    public static final String SQL_INSERT_PFANNE_ZWIEBELN = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (40, 3, 5, '1')";
+    public static final String SQL_INSERT_PFANNE_GEMUESEBRUEHE = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (41, 32, 5, '1 EL')";
+    public static final String SQL_INSERT_PFANNE_SENF = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (42, 33, 5, '1 TL')";
+    public static final String SQL_INSERT_PFANNE_MAJORAN = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (43, 34, 5, '1TL')";
+    public static final String SQL_INSERT_PFANNE_PAPRIKAPULVER = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (44, 35, 5, '1TL')";
+    public static final String SQL_INSERT_PFANNE_KUEMMEL = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (45, 36, 5, '1TL')";
+    public static final String SQL_INSERT_PFANNE_TOMATENMARK = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (46, 5, 5, '2 EL')";
+    public static final String SQL_INSERT_PFANNE_FRISCHKAESE = "INSERT INTO " + TABLE_REZEPT_ZUTATEN +
+            "(rez_zut_id, id_zut, id_rez, zut_anzahl) VALUES (47, 37, 5, '2 EL')";
+
+
+
 
     public void onInsert(SQLiteDatabase db){
         try {
@@ -312,6 +384,8 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             db.execSQL(SQL_INSERT_BAUZERL);
             Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE + " wurde angelegt.");
             db.execSQL(SQL_INSERT_PFANNE);
+
+
 
             //Zutaten
             Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_HACKFLEISCH + " wurde angelegt.");
@@ -364,6 +438,30 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             db.execSQL(SQL_INSERT_KORIANDER);
             Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_ZITRONENGRAS + " wurde angelegt.");
             db.execSQL(SQL_INSERT_ZITRONENGRAS);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_EIER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_EIER);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_MEHL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_MEHL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_BUTTER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_BUTTER);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_REIS + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_REIS);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_SPITZKOHL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_SPITZKOHL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_CHAMPIGNONS + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_CHAMPIGNONS);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_GEMUESEBRUEHE + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_GEMUESEBRUEHE);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_SENF + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_SENF);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_MAJORAN + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_MAJORAN);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PAPRIKAPULVER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PAPRIKAPULVER);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_KUEMMEL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_KUEMMEL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_FRISCHKAESE + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_FRISCHKAESE);
 
 
 
@@ -435,6 +533,44 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             db.execSQL(SQL_INSERT_CURRY_KORIANDER);
             Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_CURRY_ZITRONENGRAS + " wurde angelegt.");
             db.execSQL(SQL_INSERT_CURRY_ZITRONENGRAS);
+
+            //Bauzerl
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_BAUTZERL_KARTOFFELN + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_BAUTZERL_KARTOFFELN);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_BAUTZERL_EIER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_BAUTZERL_EIER);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_BAUTZERL_MEHL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_BAUTZERL_MEHL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_BAUTZERL_BUTTER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_BAUTZERL_BUTTER);
+
+
+            //Für Spitzkohl-Champignon-Hackpfanne mit Reis
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_REIS + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_REIS);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_HACKFLEISCH + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_HACKFLEISCH);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_SPITZKOHL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_SPITZKOHL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_CHAMPIGNONS + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_CHAMPIGNONS);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_ZWIEBELN + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_ZWIEBELN);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_GEMUESEBRUEHE + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_GEMUESEBRUEHE);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_SENF + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_SENF);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_MAJORAN + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_MAJORAN);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_PAPRIKAPULVER + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_PAPRIKAPULVER);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_KUEMMEL + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_KUEMMEL);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_TOMATENMARK + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_TOMATENMARK);
+            Log.d(LOG_TAG, "Der Datensatz: " + SQL_INSERT_PFANNE_FRISCHKAESE + " wurde angelegt.");
+            db.execSQL(SQL_INSERT_PFANNE_FRISCHKAESE);
+
 
 
 
