@@ -30,7 +30,7 @@ public class ResultListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_resultlist);
 
-        listview = (ListView)findViewById(R.id.listview_recipelist);
+        listview = findViewById(R.id.listview_recipelist);
 
         final ArrayList<String> dummydaten = new ArrayList<>();
 
@@ -58,11 +58,19 @@ public class ResultListActivity extends AppCompatActivity {
                 ImageView RecipeImage = new ImageView(ResultListActivity.this);
                 RecipeImage.setImageResource(R.drawable.recipefinderlogo);
 
-                AlertDialog.Builder alertDialogRezept = new AlertDialog.Builder(ResultListActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
 
-                        alertDialogRezept.setTitle(dummydaten.get(position));
-                        alertDialogRezept.setMessage("Zutatenliste");
-                        alertDialogRezept.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
+                        builder.setTitle(dummydaten.get(position));
+                        builder.setMessage("Zutatenliste" +
+                                "\n1."+
+                                "\n+" +
+                                "\n+" +
+                                "\n+" +
+                                "\n+" +
+                                "\n+" +
+                                "\n+" +
+                                "\n+");
+                        builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -73,10 +81,11 @@ public class ResultListActivity extends AppCompatActivity {
                         });
 
                 //alertDialogRezept.setView(RecipeImage);
+                        AlertDialog alertDialogRezept = builder.create();
 
+                        alertDialogRezept.create();
+                        alertDialogRezept.show();
 
-                alertDialogRezept.create();
-                alertDialogRezept.show();
 
             }
         });
