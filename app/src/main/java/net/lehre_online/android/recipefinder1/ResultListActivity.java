@@ -2,18 +2,18 @@ package net.lehre_online.android.recipefinder1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ResultListActivity extends AppCompatActivity {
@@ -40,6 +40,12 @@ public class ResultListActivity extends AppCompatActivity {
         dummydaten.add("Pizza");
         dummydaten.add("Knoblauchbrot");
         dummydaten.add("Thunfischsalat");
+        dummydaten.add("Spaghetti Bolognese");
+        dummydaten.add("Spaghetti Carbonara");
+        dummydaten.add("Spaghetti Frutti di Mare");
+        dummydaten.add("Pizza");
+        dummydaten.add("Knoblauchbrot");
+        dummydaten.add("Thunfischsalat");
 
         ArrayAdapter arrayAdapterTest = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dummydaten);
 
@@ -47,26 +53,34 @@ public class ResultListActivity extends AppCompatActivity {
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arrayAdapter, View view, int position, long id) {
-               // Log.d(TAG, "onItemClick: name " + dummydaten.get(position));
-               // Toast.makeText(ResultListActivity.this, "You clicked on: " + dummydaten.get(position),Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
+
+                ImageView RecipeImage = new ImageView(ResultListActivity.this);
+                RecipeImage.setImageResource(R.drawable.recipefinderlogo);
 
                 AlertDialog.Builder alertDialogRezept = new AlertDialog.Builder(ResultListActivity.this);
-                final View customLayout = getLayoutInflater().inflate(R.layout.recipe_resultdialog,null);
-                alertDialogRezept.setView(customLayout);
 
+                        alertDialogRezept.setTitle(dummydaten.get(position));
+                        alertDialogRezept.setMessage("Zutatenliste");
+                        alertDialogRezept.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
-                alertDialogRezept.setMessage(dummydaten.get(position));
+                                Intent intent3 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
+                                intent3.putExtra("Text_RecipeFinder", dummydaten.get(position));
+                                startActivity(intent3);
+                            }
+                        });
+
+                //alertDialogRezept.setView(RecipeImage);
 
 
                 alertDialogRezept.create();
                 alertDialogRezept.show();
 
-                //Intent intent4 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
-                //startActivity(intent4);
             }
         });
 
-
+        if(DBG)Log.d(TAG,MNAME +"entering...");
     }
 }

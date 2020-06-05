@@ -17,7 +17,7 @@
     <string name="Text_Rezept1">Rezept1</string>
     <string name="Text_RecipeIngredients">Recipe</string>
 
-//SQLs
+    //SQLs
     <string name="spagetthie">"INSERT INTO " + TABLE_REZEPT + " (rez_id, rez_name, rez_beschreibung, rez_dauer, rez_kalorien) VALUES (1, 'Spaghetti Bolognese', 'beschreibung', '45min', '754');"</string>
 
 
