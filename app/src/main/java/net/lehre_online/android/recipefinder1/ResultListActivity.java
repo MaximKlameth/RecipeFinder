@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,9 @@ public class ResultListActivity extends AppCompatActivity {
     static final boolean DBG = MainActivity.DBG;
     static final String TAG = "ResultListActivity";
 
+    RecipeMemoDbHelper myDb;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         final String MNAME = "onCreate()";
         if (DBG) Log.d(TAG, MNAME + "entering...");
@@ -32,22 +36,10 @@ public class ResultListActivity extends AppCompatActivity {
 
         listview = findViewById(R.id.listview_recipelist);
 
-        final ArrayList<String> dummydaten = new ArrayList<>();
 
-        dummydaten.add("Spaghetti Bolognese");
-        dummydaten.add("Spaghetti Carbonara");
-        dummydaten.add("Spaghetti Frutti di Mare");
-        dummydaten.add("Pizza");
-        dummydaten.add("Knoblauchbrot");
-        dummydaten.add("Thunfischsalat");
-        dummydaten.add("Spaghetti Bolognese");
-        dummydaten.add("Spaghetti Carbonara");
-        dummydaten.add("Spaghetti Frutti di Mare");
-        dummydaten.add("Pizza");
-        dummydaten.add("Knoblauchbrot");
-        dummydaten.add("Thunfischsalat");
 
-        ArrayAdapter arrayAdapterTest = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dummydaten);
+        ArrayAdapter arrayAdapterTest = new ArrayAdapter(this, android.R.layout.simple_list_item_1, RecipeSearchActivity.dummydaten);
+
 
         listview.setAdapter(arrayAdapterTest);
 
@@ -60,7 +52,7 @@ public class ResultListActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
 
-                        builder.setTitle(dummydaten.get(position));
+                        builder.setTitle(RecipeSearchActivity.dummydaten.get(position));
                         builder.setMessage("Zutatenliste" +
                                 "\n1."+
                                 "\n+" +
@@ -75,7 +67,7 @@ public class ResultListActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Intent intent3 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
-                                intent3.putExtra("Text_RecipeFinder", dummydaten.get(position));
+                                intent3.putExtra("Text_RecipeFinder", RecipeSearchActivity.dummydaten.get(position));
                                 startActivity(intent3);
                             }
                         });
@@ -92,4 +84,8 @@ public class ResultListActivity extends AppCompatActivity {
 
         if(DBG)Log.d(TAG,MNAME +"entering...");
     }
+
+    private void showMessage(String error, String keine_rezepte_gefunden) {
+    }
+
 }

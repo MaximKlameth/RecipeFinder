@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 public class RecipeSearchActivity extends AppCompatActivity {
 
     static final boolean DBG        = MainActivity.DBG;
@@ -26,11 +28,17 @@ public class RecipeSearchActivity extends AppCompatActivity {
     private Button btnAddIngredient2;
     private Button btnShowAll;
     public EditText editTextZutat1;
+    public static String zutat1;
     public EditText editTextZutat2;
+    public static String zutat2;
     public EditText editTextZutat3;
+    public static String zutat3;
     public EditText editTextZutat4;
+    public static String zutat4;
     public EditText editTextZutat5;
+    public static String zutat5;
 
+    public static  ArrayList<String> dummydaten = new ArrayList<>();
 
 
 
@@ -86,12 +94,28 @@ public class RecipeSearchActivity extends AppCompatActivity {
         if( DBG ) Log.v( TAG, MNAME + "entering..." );
 
         editTextZutat1 = (EditText) findViewById(R.id.EditText_SearchField1);
+        zutat1 = editTextZutat1.getText().toString();
         editTextZutat2 = (EditText) findViewById(R.id.EditText_SearchField2);
+        zutat2 = editTextZutat2.getText().toString();
         editTextZutat3 = (EditText) findViewById(R.id.EditText_SearchField3);
+        zutat3 = editTextZutat3.getText().toString();
         editTextZutat4 = (EditText) findViewById(R.id.EditText_SearchField4);
+        zutat4 = editTextZutat4.getText().toString();
         editTextZutat5 = (EditText) findViewById(R.id.EditText_SearchField5);
+        zutat5 = editTextZutat5.getText().toString();
 
-        System.out.println("Die Zutaten  " + editTextZutat1 + "\n" + editTextZutat2 + "\n" + editTextZutat3 + "\n" +editTextZutat4 + "\n" +editTextZutat5) ;
+
+
+        Cursor fitRec = myDb.getRecipeFit(RecipeSearchActivity.zutat1, RecipeSearchActivity.zutat2, RecipeSearchActivity.zutat3, RecipeSearchActivity.zutat4, RecipeSearchActivity.zutat5);
+        if(fitRec.getCount() == 0){
+            //Nachricht zeigen für den Fall, dass keine
+            showMessage("Error", "Keine Rezepte gefunden");
+            return;
+        }
+
+        while (fitRec.moveToNext()){
+            dummydaten.add(fitRec.getString(0));
+        }
 
 
         Intent intent2 = new Intent( RecipeSearchActivity.this, ResultListActivity.class );
