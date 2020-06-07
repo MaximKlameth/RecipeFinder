@@ -111,7 +111,10 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor fitRec = db.rawQuery("Select rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_ZUTATEN +
           " ON rez_id = id_rez Join " + TABLE_ZUTATEN + " ON id_zut = zut_id WHERE zut_name like '" + zut1 +
-           "' OR zut_name like '" + zut2 + "';" , null);
+          "' OR zut_name like '" + zut2 +
+          "' OR zut_name like '" + zut3 +
+          "' OR zut_name like '" + zut4 +
+                "' OR zut_name like '" + zut5 + "';" , null);
         return fitRec;
     }
 

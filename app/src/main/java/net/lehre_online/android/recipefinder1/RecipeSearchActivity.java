@@ -112,7 +112,7 @@ public class RecipeSearchActivity extends AppCompatActivity {
             showMessage("Error", "Keine Rezepte gefunden");
             return;
         }
-
+        dummydaten.clear();
         while (fitRec.moveToNext()){
             dummydaten.add(fitRec.getString(0));
         }
