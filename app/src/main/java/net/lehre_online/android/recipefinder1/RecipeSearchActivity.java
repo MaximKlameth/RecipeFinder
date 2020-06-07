@@ -25,6 +25,14 @@ public class RecipeSearchActivity extends AppCompatActivity {
     private Button btnAddIngredient;
     private Button btnAddIngredient2;
     private Button btnShowAll;
+    public EditText editTextZutat1;
+    public EditText editTextZutat2;
+    public EditText editTextZutat3;
+    public EditText editTextZutat4;
+    public EditText editTextZutat5;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +84,15 @@ public class RecipeSearchActivity extends AppCompatActivity {
 
         final String MNAME = "onClickSearch()";
         if( DBG ) Log.v( TAG, MNAME + "entering..." );
+
+        editTextZutat1 = (EditText) findViewById(R.id.EditText_SearchField1);
+        editTextZutat2 = (EditText) findViewById(R.id.EditText_SearchField2);
+        editTextZutat3 = (EditText) findViewById(R.id.EditText_SearchField3);
+        editTextZutat4 = (EditText) findViewById(R.id.EditText_SearchField4);
+        editTextZutat5 = (EditText) findViewById(R.id.EditText_SearchField5);
+
+        System.out.println("Die Zutaten  " + editTextZutat1 + "\n" + editTextZutat2 + "\n" + editTextZutat3 + "\n" +editTextZutat4 + "\n" +editTextZutat5) ;
+
 
         Intent intent2 = new Intent( RecipeSearchActivity.this, ResultListActivity.class );
         startActivity(intent2);
