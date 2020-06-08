@@ -125,6 +125,12 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         return fitZut;
     }
 
+    public Cursor getBeschreibung(String rezept){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor fitBez = db.rawQuery("Select rez_beschreibung from " + TABLE_REZEPT + " WHERE rez_name like '" + rezept + "';" , null);
+        return fitBez;
+    }
+
 
 
     //Rezepte Inserts
