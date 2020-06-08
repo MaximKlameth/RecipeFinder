@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_marginTop="130dp"
-    android:layout_marginBottom="130dp"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="80dp"
     android:layout_marginLeft="50dp"
     android:layout_marginRight="50dp"
     android:orientation="vertical">
@@ -19,14 +19,14 @@
 
         <ImageView
             android:id="@+id/ImageView_recipefinderlogo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/recipefinderlogo"/>
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/recipefinderlogo2png"/>
 
         <TextView
             android:id="@+id/Text_RecipeFinder"
             android:layout_width="250dp"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_marginRight="60dp"
             android:text="@string/Text_WelcomeRecipeFinder"
             android:layout_gravity="center"
@@ -42,8 +42,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:text="@string/EditText_SearchField1"
-        android:textColor="#000000"
+        android:hint="@string/EditText_SearchField1"
+        android:textColorHint="#000000"
         />
 
     <EditText
@@ -54,8 +54,8 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:text="@string/EditText_SearchField2"
-        android:textColor="#000000"/>
+        android:hint="@string/EditText_SearchField2"
+        android:textColorHint="#000000"/>
 
     <LinearLayout
         android:id="@+id/layout2_recipe_search"
@@ -82,8 +82,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="60dp"
-            android:text="@string/EditText_SearchField3"
-            android:textColor="#000000"/>
+            android:hint="@string/EditText_SearchField3"
+            android:textColorHint="#000000"/>
 
     </LinearLayout>
 
@@ -113,8 +113,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="60dp"
-            android:text="@string/EditText_SearchField4"
-            android:textColor="#000000"/>
+            android:hint="@string/EditText_SearchField4"
+            android:textColorHint="#000000"/>
 
     </LinearLayout>
 
@@ -126,15 +126,15 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
-            android:text="@string/EditText_SearchField5"
+            android:hint="@string/EditText_SearchField5"
             android:visibility="gone"
-            android:textColor="#000000"/>
+            android:textColorHint="#000000"/>
 
 
     <Button
         android:id="@+id/Button_Search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
@@ -146,11 +146,11 @@
     <Button
         android:id="@+id/Button_Show_All"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:text="Show All"
+        android:text="@string/Button_ShowAll"
         android:gravity="center"
         android:textColor="#000000"
         android:background="#4CAF50"/>
