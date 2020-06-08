@@ -51,12 +51,12 @@ public class RecipeSearchActivity extends AppCompatActivity {
         setContentView(R.layout.recipe_search);
         myDb = new RecipeMemoDbHelper(this);
 
-        btnSearch = findViewById(R.id.Button_Search);
+
         btnShowAll = (Button) findViewById(R.id.Button_Show_All);
+                onClickShowAll();
 
-        onClickShowAll();
 
-
+        btnSearch = findViewById(R.id.Button_Search);
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -82,7 +82,10 @@ public class RecipeSearchActivity extends AppCompatActivity {
             }
         });
 
+
+
         if(DBG)Log.d(TAG,MNAME +"entering...");
+
 
 
 
@@ -170,7 +173,7 @@ public class RecipeSearchActivity extends AppCompatActivity {
                            buffer.append(res.getString(1)+"\n\n");
                        }
                        //Alle Rezepte anzeigen
-                        showMessage("Data", buffer.toString());
+                        showMessage("Rezepte", buffer.toString());
                     }
 
                 }
@@ -184,4 +187,6 @@ public class RecipeSearchActivity extends AppCompatActivity {
         builder.setMessage(Message);
         builder.show();
     }
+
+
 }

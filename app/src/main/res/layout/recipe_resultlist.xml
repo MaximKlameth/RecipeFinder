@@ -18,14 +18,14 @@
 
         <ImageView
             android:id="@+id/ImageView_recipefinderlogo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/recipefinderlogo"/>
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/recipefinderlogo2png"/>
 
         <TextView
             android:id="@+id/Text_RecipeFinder"
             android:layout_width="250dp"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_marginRight="60dp"
             android:text="@string/Text_WelcomeRecipeFinder"
             android:layout_gravity="center"

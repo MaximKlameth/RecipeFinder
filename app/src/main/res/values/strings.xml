@@ -6,6 +6,7 @@
     <string name="Button_LetsCook">Lets Cook</string>
     <string name="Button_Search">Search</string>
     <string name="Button_AddIngredient">+</string>
+    <string name="Button_ShowAll">Show All</string>
 
     <string name="EditText_SearchField1">Type Ingredient</string>
     <string name="EditText_SearchField2">Type Ingredient</string>

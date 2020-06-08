@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -87,5 +88,6 @@ public class ResultListActivity extends AppCompatActivity {
 
     private void showMessage(String error, String keine_rezepte_gefunden) {
     }
+
 
 }
