@@ -1,8 +1,6 @@
 package net.lehre_online.android.recipefinder1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,7 +41,6 @@ public class ResultListActivity extends AppCompatActivity {
         listview = findViewById(R.id.listview_recipelist);
 
 
-
         ArrayAdapter arrayAdapterTest = new ArrayAdapter(this, android.R.layout.simple_list_item_1, RecipeSearchActivity.dummydaten);
 
 
@@ -53,7 +50,7 @@ public class ResultListActivity extends AppCompatActivity {
                                             @Override
                                             public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
 
-                                                ImageView RecipeImage = new ImageView(ResultListActivity.this);
+                                                final ImageView RecipeImage = new ImageView(ResultListActivity.this);
                                                 RecipeImage.setImageResource(R.drawable.recipefinderlogo);
 
                                                 AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
@@ -73,11 +70,7 @@ public class ResultListActivity extends AppCompatActivity {
                     zutatenliste.add(fitZut.getString(0));
                 }
 
-
-                    builder.setMessage("Zutatenliste" + zutatenliste.toString());
-
-
-
+                    builder.setMessage("Zutatenliste " + zutatenliste.toString());
 
                         builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
                             @Override
@@ -85,17 +78,15 @@ public class ResultListActivity extends AppCompatActivity {
 
                                 Intent intent3 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
                                 intent3.putExtra("Text_RecipeFinder", RecipeSearchActivity.dummydaten.get(position));
+                                intent3.putExtra("Text_RecipeIngredientsList", ResultListActivity.zutatenliste.toString());
                                 startActivity(intent3);
                             }
                         });
 
                 //alertDialogRezept.setView(RecipeImage);
                         AlertDialog alertDialogRezept = builder.create();
-
                         alertDialogRezept.create();
                         alertDialogRezept.show();
-
-
             }
         });
 

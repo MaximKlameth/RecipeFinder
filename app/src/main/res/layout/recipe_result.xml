@@ -44,14 +44,15 @@
         android:baselineAligned="false"
         android:gravity="center"
         android:text="@string/Text_Rezept1"
+        android:textSize="20dp"
         android:textColor="#000000" />
 
     <ImageView
         android:id="@+id/Image_Rezept"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/Text_RecipeIngredientsList"
@@ -62,6 +63,7 @@
         android:layout_marginRight="50dp"
         android:gravity="center"
         android:text="@string/Text_RecipeIngredients"
+
         android:textColor="#000000" />
 
 </LinearLayout>

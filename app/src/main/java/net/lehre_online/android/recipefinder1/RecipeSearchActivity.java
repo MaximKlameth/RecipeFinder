@@ -23,9 +23,10 @@ public class RecipeSearchActivity extends AppCompatActivity {
 
     RecipeMemoDbHelper myDb;
 
-    private Button btnSearch;
+    public Button btnSearch;
     private Button btnAddIngredient;
     private Button btnAddIngredient2;
+
     private Button btnShowAll;
     public EditText editTextZutat1;
     public static String zutat1;
@@ -39,8 +40,6 @@ public class RecipeSearchActivity extends AppCompatActivity {
     public static String zutat5;
 
     public static  ArrayList<String> dummydaten = new ArrayList<>();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +87,6 @@ public class RecipeSearchActivity extends AppCompatActivity {
 
 
 
-
     }
 
     private void onClickSearch() {
@@ -106,7 +104,6 @@ public class RecipeSearchActivity extends AppCompatActivity {
         zutat4 = editTextZutat4.getText().toString();
         editTextZutat5 = (EditText) findViewById(R.id.EditText_SearchField5);
         zutat5 = editTextZutat5.getText().toString();
-
 
 
         Cursor fitRec = myDb.getRecipeFit(RecipeSearchActivity.zutat1, RecipeSearchActivity.zutat2, RecipeSearchActivity.zutat3, RecipeSearchActivity.zutat4, RecipeSearchActivity.zutat5);
