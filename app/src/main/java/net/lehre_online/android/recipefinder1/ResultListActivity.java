@@ -24,6 +24,9 @@ public class ResultListActivity extends AppCompatActivity {
     static final boolean DBG = MainActivity.DBG;
     static final String TAG = "ResultListActivity";
 
+    public static  ArrayList<String> zutatenliste = new ArrayList<>();
+
+
     RecipeMemoDbHelper myDb;
 
 
@@ -33,6 +36,8 @@ public class ResultListActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_resultlist);
+        myDb = new RecipeMemoDbHelper(this);
+
 
         listview = findViewById(R.id.listview_recipelist);
 
@@ -44,24 +49,35 @@ public class ResultListActivity extends AppCompatActivity {
         listview.setAdapter(arrayAdapterTest);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
+                                            @Override
+                                            public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
 
-                ImageView RecipeImage = new ImageView(ResultListActivity.this);
-                RecipeImage.setImageResource(R.drawable.recipefinderlogo);
+                                                ImageView RecipeImage = new ImageView(ResultListActivity.this);
+                                                RecipeImage.setImageResource(R.drawable.recipefinderlogo);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
+                                                AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
 
-                        builder.setTitle(RecipeSearchActivity.dummydaten.get(position));
-                        builder.setMessage("Zutatenliste" +
-                                "\n1."+
-                                "\n+" +
-                                "\n+" +
-                                "\n+" +
-                                "\n+" +
-                                "\n+" +
-                                "\n+" +
-                                "\n+");
+                                                builder.setTitle(RecipeSearchActivity.dummydaten.get(position));
+                                                //Zutaten bekommen
+                                                Cursor fitZut = myDb.getZutatenFit(RecipeSearchActivity.dummydaten.get(position));
+                                                zutatenliste.clear();
+                if(fitZut.getCount() == 0){
+                    //Nachricht zeigen für den Fall, dass keine
+                    showMessage("Error", "Keine Zutaten gefunden");
+                    return;}
+
+
+               zutatenliste.clear();
+                while (fitZut.moveToNext()) {
+                    zutatenliste.add(fitZut.getString(0));
+                }
+
+
+                    builder.setMessage("Zutatenliste" + zutatenliste.toString());
+
+
+
+
                         builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
