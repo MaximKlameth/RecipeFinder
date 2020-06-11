@@ -57,7 +57,6 @@ public class RecipeResultActivity extends AppCompatActivity {
         RezeptZutaten = getIntent().getExtras().getString("Text_RecipeIngredientsList");
         textview2.setText("Beschreibung: " + bezeichnung);
 
-        /*
 
         btn_safe = findViewById(R.id.Button_SafeRecipe);
         btn_safe.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +67,7 @@ public class RecipeResultActivity extends AppCompatActivity {
             }
         });
 
-         */
+
     }
 
 

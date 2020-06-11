@@ -26,6 +26,7 @@ public class RecipeSearchActivity extends AppCompatActivity {
     public Button btnSearch;
     private Button btnAddIngredient;
     private Button btnAddIngredient2;
+    private Button btnMyRecipes;
 
     private Button btnShowAll;
     public EditText editTextZutat1;
@@ -55,11 +56,19 @@ public class RecipeSearchActivity extends AppCompatActivity {
                 onClickShowAll();
 
 
+
         btnSearch = findViewById(R.id.Button_Search);
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 onClickSearch();
+            }
+        });
+
+        btnMyRecipes = findViewById(R.id.Button_My_Recipes);
+        btnMyRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickMyRecipes();
             }
         });
 
@@ -87,6 +96,23 @@ public class RecipeSearchActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void onClickMyRecipes(){
+        Cursor mailfit= myDb.getRecipeMailFit(MainActivity.e_mail);
+        if(mailfit.getCount() == 0){
+            //Nachricht zeigen für den Fall, dass keine
+            showMessage("Error", "Keine Rezepte gefunden");
+            return;
+        }
+        dummydaten.clear();
+        while (mailfit.moveToNext()){
+            dummydaten.add(mailfit.getString(0));
+        }
+        Intent intent2 = new Intent( RecipeSearchActivity.this, ResultListActivity.class );
+        startActivity(intent2);
+
+        if( DBG ) Log.d( TAG,   "...exiting" );
     }
 
     private void onClickSearch() {

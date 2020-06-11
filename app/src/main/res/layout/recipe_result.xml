@@ -32,7 +32,11 @@
             android:textColor="#000000"
             android:textSize="40dp" />
 
+
+
     </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/Text_RecipeName"
@@ -46,6 +50,15 @@
         android:gravity="center"
         android:text="@string/Text_Rezept1"
         android:textSize="20dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/Button_SafeRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="#4CAF50"
+        android:text="@string/safeText"
         android:textColor="#000000" />
 
     <ImageView
@@ -64,15 +77,8 @@
         android:layout_marginRight="50dp"
         android:gravity="center"
         android:text="@string/Text_RecipeIngredients"
-
         android:textColor="#000000" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:visibility="visible"
-        tools:visibility="visible" />
+
 
 </LinearLayout>

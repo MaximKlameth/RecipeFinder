@@ -44,7 +44,7 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
     public static final String COLUMN_REZ_MAIL_ID = "rez_mail_id";
     public static final String COLUMN_MAIL = "rez_mail";
-    public static final String COLUMN_ID_REZM  = "id_rezm";
+    public static final String COLUMN_NAME_REZ  = "name_rez";
 
 
 
@@ -80,8 +80,8 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
             "CREATE TABLE " + TABLE_REZEPT_MAIL +
                     "(" + COLUMN_REZ_MAIL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_MAIL + " TEXT NOT NULL, " +
-                    COLUMN_ID_REZM + " INTEGER NOT NULL, " +
-                    "FOREIGN KEY(id_rezm) REFERENCES rezept(rez_id));";
+                    COLUMN_NAME_REZ + " TEXT NOT NULL, " +
+                    "FOREIGN KEY(name_rez) REFERENCES rezept(rez_name));";
 
 
 
@@ -150,13 +150,15 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
     public Cursor getRecipeMailFit(String mail){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor fitRezMail = db.rawQuery("Select rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_MAIL + " ON rez_id = id_rezm WHERE rez_mail like '" + mail + "';" , null);
+        Cursor fitRezMail = db.rawQuery("Select rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_MAIL + " ON rez_name = name_rez WHERE rez_mail like '" + mail + "';" , null);
         return fitRezMail;
     }
 
+
     public void safeRecipe(String mail, String rezeptid){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("INSERT INTO " + TABLE_REZEPT_MAIL +  " (rez_mail, id_rezm) VALUES(" + mail + ", " + rezeptid + " );");
+        Log.d(LOG_TAG, "Der Datensatz: " + mail + rezeptid + " wurde angelegt.");
+        db.execSQL("INSERT INTO " + TABLE_REZEPT_MAIL +  " (rez_mail, name_rez) VALUES('" + mail + "', '" + rezeptid + "' );");
     }
 
 
