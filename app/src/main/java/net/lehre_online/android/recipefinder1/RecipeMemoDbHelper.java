@@ -39,6 +39,12 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         public static final String COLUMN_ID_REZ  = "id_rez";
         public static final String COLUMN_ZUT_ANZAHL  = "zut_anzahl";
 
+        //Tabelle Mail Rezepte
+    public static final String TABLE_REZEPT_MAIL = "rezept_mail";
+
+    public static final String COLUMN_REZ_MAIL_ID = "rez_mail_id";
+    public static final String COLUMN_MAIL = "rez_mail";
+    public static final String COLUMN_ID_REZM  = "id_rezm";
 
 
 
@@ -69,6 +75,14 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
                     "FOREIGN KEY(id_zut) REFERENCES zutaten(zut_id), " +
                     "FOREIGN KEY(id_rez) REFERENCES rezept(rez_id));";
 
+    //CREATE für Tabelle Rezept_Mail
+    public static final String SQL_CREATE_REZEPT_MAIL =
+            "CREATE TABLE " + TABLE_REZEPT_MAIL +
+                    "(" + COLUMN_REZ_MAIL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COLUMN_MAIL + " TEXT NOT NULL, " +
+                    COLUMN_ID_REZM + " INTEGER NOT NULL, " +
+                    "FOREIGN KEY(id_rezm) REFERENCES rezept(rez_id));";
+
 
 
     public RecipeMemoDbHelper(Context context) {
@@ -88,7 +102,10 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
                 db.execSQL(SQL_CREATE_ZUTATEN);
                 Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATE_REZEPT_ZUTATEN + " angelegt.");
                 db.execSQL(SQL_CREATE_REZEPT_ZUTATEN);
+                Log.d(LOG_TAG, "Die Tabelle wird mit SQL-Befehl: " + SQL_CREATE_REZEPT_MAIL + " angelegt.");
+                db.execSQL(SQL_CREATE_REZEPT_MAIL);
                 onInsert(db);
+
             }
             catch (Exception ex) {
                 Log.e(LOG_TAG, "Fehler beim Anlegen der Tabelle: " + ex.getMessage());
@@ -116,11 +133,11 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
           "' OR zut_name like '" + zut4 +
                 "' OR zut_name like '" + zut5 + "';" , null);
         return fitRec;
-    }
+}
 
     public Cursor getZutatenFit(String rezept){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor fitZut = db.rawQuery("Select zut_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_ZUTATEN +
+        Cursor fitZut = db.rawQuery("Select zut_name, zut_anzahl from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_ZUTATEN +
                 " ON rez_id = id_rez Join " + TABLE_ZUTATEN + " ON id_zut = zut_id WHERE rez_name like '" + rezept + "';" , null);
         return fitZut;
     }
@@ -131,6 +148,16 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
         return fitBez;
     }
 
+    public Cursor getRecipeMailFit(String mail){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor fitRezMail = db.rawQuery("Select rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_MAIL + " ON rez_id = id_rezm WHERE rez_mail like '" + mail + "';" , null);
+        return fitRezMail;
+    }
+
+    public void safeRecipe(String mail, String rezeptid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("INSERT INTO " + TABLE_REZEPT_MAIL +  " (rez_mail, id_rezm) VALUES(" + mail + ", " + rezeptid + " );");
+    }
 
 
     //Rezepte Inserts

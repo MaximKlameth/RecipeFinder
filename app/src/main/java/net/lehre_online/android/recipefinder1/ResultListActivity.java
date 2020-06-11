@@ -67,10 +67,10 @@ public class ResultListActivity extends AppCompatActivity {
 
                zutatenliste.clear();
                 while (fitZut.moveToNext()) {
-                    zutatenliste.add(fitZut.getString(0));
+                    zutatenliste.add(fitZut.getString(1) + " " + fitZut.getString(0)  + "\n");
                 }
 
-                    builder.setMessage("Zutatenliste " + zutatenliste.toString());
+                    builder.setMessage("Zutatenliste : \n " + zutatenliste.toString());
 
                         builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
                             @Override

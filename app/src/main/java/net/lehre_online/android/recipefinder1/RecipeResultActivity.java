@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class RecipeResultActivity extends AppCompatActivity {
 
     TextView textview;
     TextView textview2;
+
+    private Button btn_safe;
+
 
     static final boolean DBG        = MainActivity.DBG;
     static final String TAG         = "RecipeResultActivity";
@@ -52,7 +57,22 @@ public class RecipeResultActivity extends AppCompatActivity {
         RezeptZutaten = getIntent().getExtras().getString("Text_RecipeIngredientsList");
         textview2.setText("Beschreibung: " + bezeichnung);
 
+        /*
+
+        btn_safe = findViewById(R.id.Button_SafeRecipe);
+        btn_safe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                myDb.safeRecipe(MainActivity.e_mail, RezeptName);
+            }
+        });
+
+         */
     }
+
+
+
 
     private void showMessage(String error, String keine_rezepte_gefunden) {
     }

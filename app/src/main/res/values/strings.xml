@@ -4,6 +4,9 @@
     <string name="Image_LogoRecipeFinder">LogoRecipeFinder</string>
 
     <string name="Button_LetsCook">Lets Cook</string>
+    <string name="mailText">E-Mail</string>
+
+
     <string name="Button_Search">Search</string>
     <string name="Button_AddIngredient">+</string>
     <string name="Button_ShowAll">Show All</string>

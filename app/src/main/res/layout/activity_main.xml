@@ -14,6 +14,7 @@
     tools:context=".MainActivity">
 
 
+
     <TextView
         android:id="@+id/Text_RecipeFinder"
         android:layout_width="match_parent"
@@ -31,14 +32,25 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/recipefinderlogo2png" />
 
+    <EditText
+        android:id="@+id/EditText_MailText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:hint="@string/mailText"
+        android:textColorHint="#000000"
+        ></EditText>
+
     <Button
         android:id="@+id/Button_LetsCook"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
+        android:background="#4CAF50"
         android:text="@string/Button_LetsCook"
-        android:textColor="#000000"
-        android:background="#4CAF50"/>
+        android:textColor="#000000" />
 
 
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     RecipeMemoDbHelper myDb;
 
     private Button btnLetsCook;
+    public EditText editTextMail;
+    public static String e_mail;
+
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         btnLetsCook.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                editTextMail = (EditText) findViewById(R.id.EditText_MailText);
+                 e_mail= editTextMail.getText().toString();
                 onClickLetsCook();
             }
 
