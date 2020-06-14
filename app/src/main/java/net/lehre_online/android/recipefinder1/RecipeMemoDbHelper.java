@@ -126,7 +126,7 @@ public class RecipeMemoDbHelper extends SQLiteOpenHelper{
 
     public Cursor getRecipeFit(String zut1, String zut2, String zut3, String zut4, String zut5 ){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor fitRec = db.rawQuery("Select rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_ZUTATEN +
+        Cursor fitRec = db.rawQuery("Select DISTINCT rez_name from " + TABLE_REZEPT + " Join " + TABLE_REZEPT_ZUTATEN +
           " ON rez_id = id_rez Join " + TABLE_ZUTATEN + " ON id_zut = zut_id WHERE zut_name like '" + zut1 +
           "' OR zut_name like '" + zut2 +
           "' OR zut_name like '" + zut3 +

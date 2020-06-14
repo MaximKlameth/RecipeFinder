@@ -2,15 +2,12 @@
     <string name="app_name">RecipeFinder</string>
 
     <string name="Image_LogoRecipeFinder">LogoRecipeFinder</string>
-
-    <string name="Button_LetsCook">Lets Cook</string>
     <string name="mailText">E-Mail</string>
     <string name="safeText">Safe Recipe</string>
+
+    <string name="Button_LetsCook">Lets Cook</string>
+    <string name="Button_Help">Help</string>
     <string name="Button_MyRecipes">My Recipes</string>
-
-
-
-
 
     <string name="Button_Search">Search</string>
     <string name="Button_AddIngredient">+</string>

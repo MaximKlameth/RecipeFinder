@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,13 +19,12 @@ public class RecipeResultActivity extends AppCompatActivity {
 
     public static ArrayList<String> bezeichnung = new ArrayList<>();
 
-
-
     TextView textview;
     TextView textview2;
+    ImageView RecipeImage;
+
 
     private Button btn_safe;
-
 
     static final boolean DBG        = MainActivity.DBG;
     static final String TAG         = "RecipeResultActivity";
@@ -42,6 +42,23 @@ public class RecipeResultActivity extends AppCompatActivity {
         RezeptName = getIntent().getExtras().getString("Text_RecipeFinder");
         textview.setText(RezeptName);
 
+        if(RezeptName.equals("Spaghetti Bolognese")) {
+            RecipeImage = findViewById(R.id.Image_Rezept);
+            RecipeImage.setImageResource(R.drawable.spaghettibolognese);
+        } else if(RezeptName.equals("Hähnchen Geschnetzeltes")) {
+            RecipeImage = findViewById(R.id.Image_Rezept);
+            RecipeImage.setImageResource(R.drawable.huhn);
+        } else if(RezeptName.equals("Annas Massaman-Curry")) {
+            RecipeImage = findViewById(R.id.Image_Rezept);
+            RecipeImage.setImageResource(R.drawable.massamancurry);
+        } else if(RezeptName.equals("Erdäpfel-Bauzerl")) {
+            RecipeImage = findViewById(R.id.Image_Rezept);
+            RecipeImage.setImageResource(R.drawable.bauzerl);
+        } else if(RezeptName.equals("Spitzkohl-Champignon-Hack-Pfanne mit Reis")) {
+            RecipeImage = findViewById(R.id.Image_Rezept);
+            RecipeImage.setImageResource(R.drawable.spitzkohlchampignonhackpfanne);
+        }
+
         Cursor fitbes = myDb.getBeschreibung(RezeptName);
         if(fitbes.getCount() == 0){
             //Nachricht zeigen für den Fall, dass keine
@@ -58,6 +75,8 @@ public class RecipeResultActivity extends AppCompatActivity {
         textview2.setText("Beschreibung: " + bezeichnung);
 
 
+
+
         btn_safe = findViewById(R.id.Button_SafeRecipe);
         btn_safe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +88,6 @@ public class RecipeResultActivity extends AppCompatActivity {
 
 
     }
-
 
 
 

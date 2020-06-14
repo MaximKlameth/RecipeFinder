@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     RecipeMemoDbHelper myDb;
 
     private Button btnLetsCook;
-    public EditText editTextMail;
+    private Button btnHelp;
+    private EditText editTextMail;
     public static String e_mail;
 
 
@@ -53,7 +55,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(DBG)Log.d(TAG,MNAME +"entering...");
+
+        btnHelp = findViewById(R.id.Button_Help);
+        btnHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onClickHelp();
+            }
+        });
     }
+
 
      public void onClickLetsCook() {
 
@@ -65,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
 
             if( DBG ) Log.d( TAG, MNAME + "...exiting" );
     }
+
+    public void onClickHelp() {
+
+        final String MNAME = "onClickLetsCook()";
+        if( DBG ) Log.v( TAG, MNAME + "entering..." );
+
+        Toast.makeText(MainActivity.this,"Diese App dient Ihnen dazu, übrig gebliebene Lebensmittel bestmöglich zu verwerten, indem Sie Ihnen eine Vielzahl von Rezepten vorschlägt, die man mit Ihren Lebensmitteln kochen kann.",Toast.LENGTH_LONG).show();
+
+        if( DBG ) Log.d( TAG, MNAME + "...exiting" );
+    }
+
  /*
 
         RecipeMemo testMemo = new RecipeMemo("Pizza", "Pizza dies das", 102);
