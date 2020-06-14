@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -83,6 +84,7 @@ public class RecipeResultActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 myDb.safeRecipe(MainActivity.e_mail, RezeptName);
+                Toast.makeText(RecipeResultActivity.this,"Rezept gespeichert",Toast.LENGTH_LONG).show();
             }
         });
 

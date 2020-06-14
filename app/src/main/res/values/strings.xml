@@ -3,21 +3,21 @@
 
     <string name="Image_LogoRecipeFinder">LogoRecipeFinder</string>
     <string name="mailText">E-Mail</string>
-    <string name="safeText">Safe Recipe</string>
 
+    <string name="Button_safeText">Rezept speichern</string>
     <string name="Button_LetsCook">Lets Cook</string>
-    <string name="Button_Help">Help</string>
-    <string name="Button_MyRecipes">My Recipes</string>
+    <string name="Button_Help">Hilfe</string>
+    <string name="Button_MyRecipes">Meine Rezepte</string>
 
-    <string name="Button_Search">Search</string>
+    <string name="Button_Search">Suche</string>
     <string name="Button_AddIngredient">+</string>
-    <string name="Button_ShowAll">Show All</string>
+    <string name="Button_ShowAll">Alle anzeigen</string>
 
-    <string name="EditText_SearchField1">Type Ingredient</string>
-    <string name="EditText_SearchField2">Type Ingredient</string>
-    <string name="EditText_SearchField3">Type Ingredient</string>
-    <string name="EditText_SearchField4">Type Ingredient</string>
-    <string name="EditText_SearchField5">Type Ingredient</string>
+    <string name="EditText_SearchField1">Zutat eingeben</string>
+    <string name="EditText_SearchField2">Zutat eingeben</string>
+    <string name="EditText_SearchField3">Zutat eingeben</string>
+    <string name="EditText_SearchField4">Zutat eingeben</string>
+    <string name="EditText_SearchField5">Zutat eingeben</string>
 
     <string name="Text_WelcomeRecipeFinder">RecipeFinder</string>
     <string name="Text_Rezept1">Rezept1</string>
