@@ -10,11 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+/**Diese Klasse Recipe Scearch enthält das Backend zur Seite der Zutateneingabe inkl. der Suche
+ * @author Maxim Klameth
+ * @version 05.07.2020
+ */
 
 public class ResultListActivity extends AppCompatActivity {
 
@@ -40,9 +43,8 @@ public class ResultListActivity extends AppCompatActivity {
 
         listview = findViewById(R.id.listview_recipelist);
 
-
-        ArrayAdapter arrayAdapterTest = new ArrayAdapter(this, android.R.layout.simple_list_item_1, RecipeSearchActivity.dummydaten);
-
+        //simple_list_item_1 ist ein vorgefertigtes XML Layout
+        ArrayAdapter arrayAdapterTest = new ArrayAdapter(this, android.R.layout.simple_list_item_1, RecipeSearchActivity.rezeptlist);
 
         listview.setAdapter(arrayAdapterTest);
 
@@ -50,25 +52,21 @@ public class ResultListActivity extends AppCompatActivity {
                                             @Override
                                             public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
 
-                                                final ImageView RecipeImage = new ImageView(ResultListActivity.this);
-                                                RecipeImage.setImageResource(R.drawable.recipefinderlogo);
-
                                                 AlertDialog.Builder builder = new AlertDialog.Builder(ResultListActivity.this);
 
-                                                builder.setTitle(RecipeSearchActivity.dummydaten.get(position));
+                                                builder.setTitle(RecipeSearchActivity.rezeptlist.get(position));
                                                 //Zutaten bekommen
-                                                Cursor fitZut = myDb.getZutatenFit(RecipeSearchActivity.dummydaten.get(position));
+                                                Cursor fitZut = myDb.getZutatenFit(RecipeSearchActivity.rezeptlist.get(position));
                                                 zutatenliste.clear();
-                if(fitZut.getCount() == 0){
-                    //Nachricht zeigen für den Fall, dass keine
-                    showMessage("Error", "Keine Zutaten gefunden");
-                    return;}
+                                                if(fitZut.getCount() == 0){
+                                                    //Nachricht zeigen für den Fall, dass keine
+                                                    showMessage("Error", "Keine Zutaten gefunden");
+                                                    return;}
 
-
-               zutatenliste.clear();
-                while (fitZut.moveToNext()) {
-                    zutatenliste.add(fitZut.getString(1) + " " + fitZut.getString(0)  + "\n");
-                }
+                                                   zutatenliste.clear();
+                                                    while (fitZut.moveToNext()) {
+                                                        zutatenliste.add(fitZut.getString(1) + " " + fitZut.getString(0)  + "\n");
+                                                    }
 
                     builder.setMessage("Zutatenliste : \n " + zutatenliste.toString());
 
@@ -77,7 +75,7 @@ public class ResultListActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Intent intent3 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
-                                intent3.putExtra("Text_RecipeFinder", RecipeSearchActivity.dummydaten.get(position));
+                                intent3.putExtra("Text_RecipeFinder", RecipeSearchActivity.rezeptlist.get(position));
                                 intent3.putExtra("Text_RecipeIngredientsList", ResultListActivity.zutatenliste.toString());
                                 startActivity(intent3);
                             }

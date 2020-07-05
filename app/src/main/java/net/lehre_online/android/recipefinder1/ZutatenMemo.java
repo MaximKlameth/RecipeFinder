@@ -1,5 +1,11 @@
 package net.lehre_online.android.recipefinder1;
 
+/**Diese Klasse dient zur Erstellung von Zutaten Objekten.
+ * Die Klasse wird in der aktuellen Version nicht benutzt, da die Zutaten direkt aus der DB in einer Liste abgelegt werden.
+ * Da die Klasse nicht verwendet wird ist diese auch nicht weiterhin erklärt
+ * @author Kevin Giesen
+ * @version 05.07.2020
+ */
 public class ZutatenMemo {
 
     private long zut_id;

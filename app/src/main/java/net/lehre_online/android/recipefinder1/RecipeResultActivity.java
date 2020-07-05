@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**Diese Klasse dient zur Anzeige der Rezeptbeschreibung eines Gerichts
+ * @author Maxim Klameth
+ * @version 05.07.2020
+ */
 public class RecipeResultActivity extends AppCompatActivity {
 
     public String RezeptName;
@@ -77,18 +81,18 @@ public class RecipeResultActivity extends AppCompatActivity {
 
 
 
-
+    //Button erstellen
         btn_safe = findViewById(R.id.Button_SafeRecipe);
+        //OnClick Listener erstellen
         btn_safe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //safe Rezept Methode aufrufen
                 myDb.safeRecipe(MainActivity.e_mail, RezeptName);
+                //Feedback: Rezept gespeichert
                 Toast.makeText(RecipeResultActivity.this,"Rezept gespeichert",Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
 
