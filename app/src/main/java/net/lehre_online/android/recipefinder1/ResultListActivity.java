@@ -46,8 +46,10 @@ public class ResultListActivity extends AppCompatActivity {
         //simple_list_item_1 ist ein vorgefertigtes XML Layout
         ArrayAdapter arrayAdapterTest = new ArrayAdapter(this, android.R.layout.simple_list_item_1, RecipeSearchActivity.rezeptlist);
 
+        //arrayAdapterTest Inhalt wird auf die listview übertragen
         listview.setAdapter(arrayAdapterTest);
 
+        //implementieren eines AlertDialogs, der bei einem Klick auf ein Rezept aufgerufen wird und den Rezeptnamen, sowie die zugehörigen Zutaten anzeigt
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
                                             public void onItemClick(AdapterView<?> arrayAdapter, View view, final int position, long id) {
@@ -68,12 +70,14 @@ public class ResultListActivity extends AppCompatActivity {
                                                         zutatenliste.add(fitZut.getString(1) + " " + fitZut.getString(0)  + "\n");
                                                     }
 
-                    builder.setMessage("Zutatenliste : \n " + zutatenliste.toString());
+                                                builder.setMessage("Zutatenliste : \n " + zutatenliste.toString());
 
-                        builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                                 //dem AlertDialog wird ein PositiveButton übergeben, der den Aufruf der RecipeResultActivity einleitet
+                                 builder.setPositiveButton("Go to Recipe!", new DialogInterface.OnClickListener() {
+                                     @Override
+                                    public void onClick(DialogInterface dialog, int which) {
 
+                                         //durch das PutExtra werden der RecipeResultActivity die benötigten Daten des angeklickten Rezeptes übergeben
                                 Intent intent3 = new Intent(ResultListActivity.this, RecipeResultActivity.class);
                                 intent3.putExtra("Text_RecipeFinder", RecipeSearchActivity.rezeptlist.get(position));
                                 intent3.putExtra("Text_RecipeIngredientsList", ResultListActivity.zutatenliste.toString());

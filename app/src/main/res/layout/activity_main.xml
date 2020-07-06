@@ -29,7 +29,7 @@
         android:layout_height="129dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:src="@drawable/recipefinderlogo2png" />
+        android:src="@drawable/recipefinderlogo2" />
 
     <EditText
         android:id="@+id/EditText_MailText"
@@ -60,6 +60,5 @@
         android:textSize="10dp"
         android:background="#4CAF50"
         />
-
 
 </LinearLayout>

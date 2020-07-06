@@ -18,17 +18,20 @@ import java.util.ArrayList;
  */
 public class RecipeResultActivity extends AppCompatActivity {
 
+    //deklarieren der variablen rezeptname, Rezeptzutaten, myDb
     public String RezeptName;
     public String RezeptZutaten;
     RecipeMemoDbHelper myDb;
 
+    //deklarieren der variablen bezeichnung
     public static ArrayList<String> bezeichnung = new ArrayList<>();
 
+    //deklarieren der variablen Textview, textview2, RecipeImage
     TextView textview;
     TextView textview2;
     ImageView RecipeImage;
 
-
+    //deklarieren der variablen btn_safe
     private Button btn_safe;
 
     static final boolean DBG        = MainActivity.DBG;
@@ -40,13 +43,20 @@ public class RecipeResultActivity extends AppCompatActivity {
         if (DBG) Log.d(TAG, MNAME + "entering...");
         myDb = new RecipeMemoDbHelper(this);
 
+        //layout setzen, aufruf recipe_result
         setContentView(R.layout.recipe_result);
         super.onCreate(savedInstanceState);
 
+        /*hierbei wird dem texview aus dem recipe_result Layout, der Gerichtname übergeben, die in der ResultListActivity im intent als
+         putExtra, mitübergeben wurde. Dieser wird dann dem textview eingfügt.
+         */
         textview = findViewById(R.id.Text_RecipeName);
         RezeptName = getIntent().getExtras().getString("Text_RecipeFinder");
         textview.setText(RezeptName);
 
+        /* Dieser if else Block, dient der Kontrolle darüber, welches Bild zu dem jeweiligen Rezept angezeigt wird.
+            Wenn der name des gerichts einen gewissen String Wert hat, so wird aus der drawable folder das entsprechende Bild als Image gesetzt
+         */
         if(RezeptName.equals("Spaghetti Bolognese")) {
             RecipeImage = findViewById(R.id.Image_Rezept);
             RecipeImage.setImageResource(R.drawable.spaghettibolognese);
@@ -75,6 +85,9 @@ public class RecipeResultActivity extends AppCompatActivity {
             bezeichnung.add(fitbes.getString(0));
         }
 
+        /*hierbei wird dem texview aus dem recipe_result Layout, die Beschreibung des Gerichtes übergeben, die in der ResultListActivity im intent als
+         putExtra, mitübergeben wurde. Dieser wird dann dem textview eingfügt.
+         */
         textview2 = findViewById(R.id.Text_RecipeIngredientsList);
         RezeptZutaten = getIntent().getExtras().getString("Text_RecipeIngredientsList");
         textview2.setText("Beschreibung: " + bezeichnung);
